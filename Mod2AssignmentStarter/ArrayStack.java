@@ -29,7 +29,17 @@ public class ArrayStack<T> implements Stack<T>{
 
     @Override
     public T peek() {
-        return null;
+
+
+        // this doesn't work when stack is empty
+        // will go to index -1
+
+        // need to add a special case when it's empty
+        // or when count = 0
+        if (count == 0) {
+            return null;
+        }
+        return stack[count-1];
     }
 
     @Override
