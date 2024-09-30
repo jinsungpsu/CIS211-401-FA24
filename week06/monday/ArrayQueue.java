@@ -69,14 +69,18 @@ public class ArrayQueue<T> implements Queue<T> {
 //        for (int i = front; i < back; i++) {
 //            output.append(queue[i] + " ");
 //        }
-//        for (int i = 0; i < count; i++) {
-//            output.append(queue[(i+front)%queue.length]);
-//        }
+       for (int i = 0; i < count; i++) {
+           output.append(queue[(i+front)%queue.length]);
+       }
 
-        for (int i = front% queue.length; i == (back-1)% queue.length; i++) {
-            // this might be off by one...
-            output.append(queue[i] + " ");
-        }
+        // for (int i = front% queue.length; i == (back-1)% queue.length; i++) {
+        //     ****************************************************
+        //     ****************************************************
+        //     ***this one has an error and needs to be debugged***
+        //     ****************************************************
+        //     ****************************************************
+        //     output.append(queue[i] + " ");
+        // }
 
         return output.toString()+"]";
     }
