@@ -174,11 +174,8 @@ class BST<T extends Comparable<T>> {
         }
         // L R V
         postorder(subRoot.left, output);
-
-        output.append(subRoot.data + " ");
-
         postorder(subRoot.right, output);
-
+        output.append(subRoot.data + " ");
     }
 
     class Node {
