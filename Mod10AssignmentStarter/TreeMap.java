@@ -8,7 +8,16 @@ public class TreeMap<K extends Comparable<K>, V> implements Map<K, V> {
 
     @Override
     public V put(K key, V value) {
+        if (root == null) {
+            root = new Node(key, value);
+        } else {
+            insertRecursively(key, value, root);
+        }
         return null;
+    }
+    
+    private void insertRecursively(K key, V value, Node itr) {
+        
     }
 
     @Override
@@ -25,6 +34,11 @@ public class TreeMap<K extends Comparable<K>, V> implements Map<K, V> {
         Node left, right;
         K key;
         V value;
+
+        public Node(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
     }
 }
 
